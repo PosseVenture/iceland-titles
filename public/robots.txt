@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Keep private pages unindexed
+Disallow: /welcome
+Disallow: /checkout
+Disallow: /order-success
+Disallow: /order-cancel
+Disallow: /api/
+
+Sitemap: https://icelandictitles.com/sitemap.xml

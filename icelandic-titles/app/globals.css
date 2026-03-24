@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GOOGLE FONTS — Cinzel (Norse/medieval display) + Raleway (elegant body)
+   ───────────────────────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap");
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CSS CUSTOM PROPERTIES — Iceland Design System
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Fonts */
+  --font-cinzel: "Cinzel", Georgia, serif;
+  --font-raleway: "Raleway", system-ui, sans-serif;
+  --font-mono: "Fira Code", "Consolas", monospace;
+
+  /* Iceland brand palette */
+  --color-ice-black: #060D19;
+  --color-ice-deep: #0A2540;
+  --color-ice-navy: #0D2F52;
+  --color-ice-blue: #1A4A7A;
+  --color-aurora: #00D4FF;
+  --color-aurora-dim: #00A3C4;
+  --color-aurora-violet: #7C3AED;
+  --color-aurora-green: #10B981;
+  --color-ice-gold: #F59E0B;
+  --color-ice-gold-light: #FCD34D;
+  --color-ice-white: #F0F8FF;
+  --color-ice-silver: #CBD5E1;
+
+  /* Semantic light mode (default: dark — Iceland is a dark-mode brand) */
+  --bg-primary: var(--color-ice-black);
+  --bg-secondary: var(--color-ice-deep);
+  --bg-surface: rgba(255, 255, 255, 0.04);
+  --bg-surface-hover: rgba(255, 255, 255, 0.08);
+  --text-primary: #F0F8FF;
+  --text-secondary: #94A3B8;
+  --text-muted: #475569;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.15);
+  --border-gold: rgba(245, 158, 11, 0.35);
+  --border-aurora: rgba(0, 212, 255, 0.25);
+
+  /* Nav height — used for sticky offset */
+  --nav-height: 72px;
+}
+
+/* Light mode overrides */
+.light {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-surface: rgba(10, 37, 64, 0.04);
+  --bg-surface-hover: rgba(10, 37, 64, 0.08);
+  --text-primary: #0A2540;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-subtle: rgba(10, 37, 64, 0.1);
+  --border-light: rgba(10, 37, 64, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE RESETS
+   ───────────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-raleway);
+  background-color: var(--color-ice-black);
+  color: var(--color-ice-white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Light mode body */
+.light body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Focus ring — accessible & branded */
+:focus-visible {
+  outline: 2px solid var(--color-aurora);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 6px;
+  z-index: 9999;
+  background: var(--color-ice-gold);
+  color: var(--color-ice-black);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 6px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY
+   ───────────────────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cinzel);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive heading scale */
+h1 { font-size: clamp(2.25rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+/* Display label (eyebrow text) */
+.label-eyebrow {
+  font-family: var(--font-cinzel);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-aurora);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   AURORA DECORATIVE ORBS
+   ───────────────────────────────────────────────────────────────────────────── */
+.aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.aurora-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.25), transparent 70%);
+  animation: auroraDrift1 25s ease-in-out infinite alternate;
+}
+
+.aurora-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2), transparent 70%);
+  animation: auroraDrift2 30s ease-in-out infinite alternate;
+}
+
+.aurora-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent 70%);
+  animation: auroraDrift3 20s ease-in-out infinite alternate;
+}
+
+@keyframes auroraDrift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 80px) scale(1.15); }
+}
+@keyframes auroraDrift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-40px, 60px) scale(1.1); }
+}
+@keyframes auroraDrift3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, -40px) scale(1.2); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GLASS CARD
+   ───────────────────────────────────────────────────────────────────────────── */
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1.25rem;
+}
+
+.glass-card:hover {
+  border-color: var(--border-light);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BUTTONS
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-gold {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #060D19;
+  font-weight: 700;
+  font-family: var(--font-raleway);
+  letter-spacing: 0.04em;
+  border-radius: 0.625rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45);
+}
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border-light);
+  color: var(--color-ice-white);
+  font-family: var(--font-raleway);
+  backdrop-filter: blur(8px);
+  border-radius: 0.625rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.btn-aurora {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(124, 58, 237, 0.15));
+  border: 1px solid var(--border-aurora);
+  color: var(--color-aurora);
+  font-family: var(--font-raleway);
+  border-radius: 0.625rem;
+  transition: all 0.2s;
+}
+.btn-aurora:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(124, 58, 237, 0.25));
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GRADIENT TEXT
+   ───────────────────────────────────────────────────────────────────────────── */
+.text-gradient-aurora {
+  background: linear-gradient(135deg, var(--color-aurora), var(--color-aurora-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-ice-gold), var(--color-ice-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DIVIDER
+   ───────────────────────────────────────────────────────────────────────────── */
+.divider-gold {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-ice-gold), transparent);
+}
+
+.divider-aurora {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-aurora), transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SECTION SPACING
+   ───────────────────────────────────────────────────────────────────────────── */
+.section {
+  padding: 6rem 1.5rem;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 7.5rem 1.5rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLLBAR STYLING
+   ───────────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ice-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ice-blue);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-aurora-dim);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   REDUCED MOTION — Respect user preferences
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .aurora-orb {
+    animation: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   STRIPE PAYMENT ELEMENT OVERRIDES
+   ───────────────────────────────────────────────────────────────────────────── */
+.StripeElement {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  padding: 12px 16px;
+  transition: border-color 0.2s;
+}
+
+.StripeElement--focus {
+  border-color: var(--color-aurora);
+}
+
+.StripeElement--invalid {
+  border-color: #ef4444;
+}
+
+/* ─── Shop utilities ─────────────────────────────────────────────────────── */
+
+/* ─── Shop utilities ─────────────────────────────────────────────────────── */
+.shadow-aurora-ring {
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.5);
+}

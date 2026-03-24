@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GLOBAL STYLES — Icelandic Titles
+   Palette: #060D19 ink · #0A2540 navy · #A8D8EA glacier · #00D4FF aurora
+            #39E8A0 spirit · #C8A96E rune-gold
+   Fonts:   Cormorant Garamond (display) · Crimson Text (body)
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── CSS Custom Properties ─────────────────────────────────────────────────── */
+:root {
+  --nav-height: 72px;
+
+  /* Aurora glow colours for JS usage */
+  --glacier:    168, 216, 234;
+  --aurora:       0, 212, 255;
+  --spirit:      57, 232, 160;
+  --rune-gold:  200, 169, 110;
+
+  /* Easing curves */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0.0,  0.0,  0.2,  1.0);
+}
+
+/* ─── Base Layer ─────────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing:  antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering:          optimizeLegibility;
+  }
+
+  body {
+    @apply bg-ice-black text-ice-white font-body;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── WCAG 2.2 AA focus ring ───────────────────────────────── */
+  :focus-visible {
+    @apply outline-none;
+    box-shadow:
+      0 0 0 2px #060D19,
+      0 0 0 4px #A8D8EA;
+    border-radius: 4px;
+  }
+
+  /* ── Skip link (accessibility) ────────────────────────────── */
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus {
+    @apply not-sr-only fixed top-4 left-4 z-[9999];
+    @apply bg-glacier text-ice-black font-display font-semibold;
+    @apply text-sm px-4 py-2 rounded-lg;
+    box-shadow: 0 0 0 2px white;
+  }
+
+  /* ── Headings use display font ────────────────────────────── */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* ── Text selection ────────────────────────────────────────── */
+  ::selection {
+    background: rgba(168, 216, 234, 0.25);
+    color: white;
+  }
+
+  /* ── Custom scrollbar ──────────────────────────────────────── */
+  ::-webkit-scrollbar       { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-ice-deep; }
+  ::-webkit-scrollbar-thumb { @apply bg-glacier-dim rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-glacier; }
+}
+
+/* ─── Component Layer ────────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ── Glass card ────────────────────────────────────────────── */
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-md;
+    @apply border border-white/[0.07] rounded-2xl;
+    box-shadow: 0 4px 24px rgba(6, 13, 25, 0.5);
+  }
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+    @apply hover:bg-white/[0.07] hover:border-white/[0.12];
+  }
+  .glass-card-hover:hover {
+    box-shadow:
+      0 0 40px rgba(168, 216, 234, 0.12),
+      0 4px 24px rgba(6, 13, 25, 0.6);
+  }
+
+  /* ── Aurora orb background element ────────────────────────── */
+  .aurora-orb {
+    @apply absolute rounded-full pointer-events-none select-none;
+    filter: blur(100px);
+    animation: aurora-drift 18s ease-in-out infinite;
+  }
+
+  /* ── Noise / grain overlay ─────────────────────────────────── */
+  .grain-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+
+  /* ── Rune horizontal rule ──────────────────────────────────── */
+  .rune-divider {
+    @apply flex items-center gap-4 text-rune-gold/40;
+  }
+  .rune-divider::before,
+  .rune-divider::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: linear-gradient(90deg, transparent, rgba(200, 169, 110, 0.25), transparent);
+  }
+
+  /* ── Section spacing helper ────────────────────────────────── */
+  .section-pad {
+    @apply py-20 md:py-28 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ── Text gradients ────────────────────────────────────────── */
+  .text-gradient-glacier {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #A8D8EA, #C8ECF7, #00D4FF);
+  }
+  .text-gradient-spirit {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #39E8A0, #A8D8EA);
+  }
+  .text-gradient-rune {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #C8A96E, #F5E199, #C8A96E);
+  }
+
+  /* ── Eyebrow label ─────────────────────────────────────────── */
+  .eyebrow {
+    @apply text-xs font-body font-semibold tracking-[0.22em] uppercase text-glacier-dim;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '—';
+    opacity: 0.5;
+  }
+
+  /* ── Spirit sparkle hover glow ─────────────────────────────── */
+  .btn-spirit {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  .btn-spirit::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(57, 232, 160, 0.18) 0%,
+      transparent 70%
+    );
+  }
+  .btn-spirit:hover::before { @apply opacity-100; }
+
+  /* ── Nav link with underline reveal ───────────────────────── */
+  .nav-link {
+    @apply relative text-sm font-body font-medium;
+    @apply text-white/60 hover:text-white;
+    @apply transition-colors duration-200;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-px bg-glacier;
+    @apply scale-x-0 transition-transform duration-200 origin-left;
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after { @apply scale-x-100; }
+  .nav-link[aria-current="page"]        { @apply text-white; }
+
+  /* ── Cart overlay ──────────────────────────────────────────── */
+  .cart-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(6, 13, 25, 0.78);
+    backdrop-filter: blur(6px);
+  }
+  .cart-panel {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(440px, 100vw);
+    z-index: 201;
+    @apply bg-ice-deep border-l border-white/[0.07];
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Certificate border ────────────────────────────────────── */
+  .certificate-border {
+    border: 1px solid rgba(200, 169, 110, 0.35);
+    box-shadow:
+      inset 0 0 0 6px  rgba(200, 169, 110, 0.05),
+      inset 0 0 0 10px rgba(200, 169, 110, 0.025);
+  }
+
+  /* ── Trustpilot green star ─────────────────────────────────── */
+  .trustpilot-star {
+    @apply inline-block;
+    background: #00b67a;
+    color: white;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+}
+
+/* ─── Utility Layer ──────────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Radial spirit background */
+  .bg-spirit-radial {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(57, 232, 160, 0.07) 0%,
+      transparent 70%
+    );
+  }
+  .bg-glacier-radial {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(168, 216, 234, 0.07) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Reduced motion — respect user preference (WCAG 2.3) */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration:      0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration:     0.01ms !important;
+      scroll-behavior:         auto   !important;
+    }
+    .aurora-orb { animation: none !important; }
+  }
+}
+
+/* ─── Print Styles ──────────────────────────────────────────────────────────── */
+@media print {
+  nav, footer, .no-print { display: none !important; }
+  body { background: white; color: black; }
+  .certificate-border { border: 2px solid #c8a96e; }
+}
+
+/* ─── Part 6: CTA micro-animations + Icelandic flag motif ───────────────────── */
+@layer components {
+
+  /* ── CTA pulse ring on primary buttons ──────────────────────────────────── */
+  .btn-primary-pulse {
+    @apply relative;
+  }
+  .btn-primary-pulse::after {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0;
+    box-shadow: 0 0 0 0 rgba(168, 216, 234, 0.5);
+    transition: opacity 0.15s;
+  }
+  .btn-primary-pulse:focus-visible::after {
+    animation: btn-pulse 0.5s ease-out forwards;
+  }
+
+  /* ── Icelandic flag cross motif (decorative divider) ─────────────────────── */
+  /* Iceland flag: blue #003897, red #D72828, white cross                       */
+  .iceland-cross-divider {
+    @apply relative flex items-center justify-center my-8;
+  }
+  .iceland-cross-divider::before {
+    content: '';
+    @apply absolute left-0 right-0 h-px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  }
+  .iceland-cross-divider > span {
+    @apply relative z-10 w-7 h-7 flex-shrink-0;
+    /* Inline SVG of Iceland flag cross in a circle */
+    background:
+      /* White cross horizontal */ linear-gradient(
+        90deg,
+        transparent 35%, white 35%, white 45%, transparent 45%
+      ),
+      /* White cross vertical */ linear-gradient(
+        180deg,
+        transparent 35%, white 35%, white 45%, transparent 45%
+      ),
+      /* Red cross horizontal (narrower) */ linear-gradient(
+        90deg,
+        transparent 38%, #D72828 38%, #D72828 42%, transparent 42%
+      ),
+      /* Red cross vertical (narrower) */ linear-gradient(
+        180deg,
+        transparent 38%, #D72828 38%, #D72828 42%, transparent 42%
+      ),
+      /* Iceland blue background */ #003897;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  /* ── Loading shimmer for skeletons ───────────────────────────────────────── */
+  .skeleton-shimmer {
+    @apply relative overflow-hidden bg-white/[0.05] rounded-lg;
+  }
+  .skeleton-shimmer::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(168,216,234,0.07) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  /* ── Enhanced focus ring for interactive glacier elements ────────────────── */
+  .focus-glacier {
+    @apply focus-visible:outline-none;
+  }
+  .focus-glacier:focus-visible {
+    box-shadow:
+      0 0 0 2px #060D19,
+      0 0 0 4px #A8D8EA,
+      0 0 12px rgba(168,216,234,0.3);
+    border-radius: 12px;
+  }
+}
+
+@layer utilities {
+  /* Smooth page transition helper */
+  .page-enter {
+    animation: fade-up 0.5s ease forwards;
+  }
+
+  /* Spirit sparkle hover on any element */
+  .hover-sparkle:hover::before {
+    content: '✦';
+    @apply absolute -top-3 -right-2 text-spirit/60 text-xs pointer-events-none;
+    animation: twinkle 0.6s ease-out;
+  }
+}
+
+/* ─── Keyframe: btn-pulse ────────────────────────────────────────────────────── */
+@keyframes btn-pulse {
+  0%   { opacity: 0.8; box-shadow: 0 0 0 0   rgba(168,216,234,0.5); }
+  100% { opacity: 0;   box-shadow: 0 0 0 12px rgba(168,216,234,0); }
+}
