@@ -1,34 +1,41 @@
 "use client";
+
 // ─────────────────────────────────────────────────────────────────────────────
-// /order-success — Post-Stripe-checkout success page
-// Reads ?session_id= from URL, shows celebration + next steps
+// order-success – Post-Stripe-checkout success page
+// Reads ?session_id from URL, shows celebration + next steps
 // ─────────────────────────────────────────────────────────────────────────────
-import { useEffect, useState } from "react";
-import { useSearchParams }     from "next/navigation";
-import Link                    from "next/link";
-import { motion }              from "framer-motion";
+
+import { useEffect, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   CheckCircle2, Download, Map,
   Compass, ArrowRight, Leaf,
 } from "lucide-react";
-import { cn }                  from "@/lib/utils";
-import { useCartStore }        from "@/lib/store";
+import { cn } from "@/lib/utils";
+import { useCartStore } from "@/lib/store";
 
 // Sparkle positions for the celebration
 const SPARKLES = [
-  { top: "12%", left: "8%",  delay: 0,    size: "text-xl" },
-  { top: "8%",  left: "88%", delay: 0.2,  size: "text-base" },
+  { top: "12%", left: "8%", delay: 0, size: "text-xl" },
+  { top: "8%", left: "88%", delay: 0.2, size: "text-base" },
   { top: "20%", left: "55%", delay: 0.35, size: "text-sm" },
-  { top: "75%", left: "15%", delay: 0.1,  size: "text-lg" },
+  { top: "75%", left: "15%", delay: 0.1, size: "text-lg" },
   { top: "80%", left: "82%", delay: 0.45, size: "text-xl" },
-  { top: "55%", left: "5%",  delay: 0.6,  size: "text-sm" },
+  { top: "55%", left: "5%", delay: 0.6, size: "text-sm" },
   { top: "60%", left: "92%", delay: 0.25, size: "text-base" },
 ];
 
-export default function OrderSuccessPage() {
-  const params    = useSearchParams();
+function OrderSuccessContent() {
+  const params = useSearchParams();
   const sessionId = params.get("session_id");
   const { clearCart } = useCartStore();
+
+  // Clear cart once after successful payment
+  useEffect(() => {
+    clearCart();
+  }, [clearCart]);
 
   // Clear cart once after successful payment
   useEffect(() => {
@@ -172,5 +179,16 @@ export default function OrderSuccessPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+export default function OrderSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">Loading your order details...</div>
+      </div>
+    }>
+      <OrderSuccessContent />
+    </Suspense>
   );
 }

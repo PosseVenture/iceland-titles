@@ -7,7 +7,7 @@ import { ShieldCheck, Truck, Zap, Star, Globe, Lock, ChevronRight } from "lucide
 import Link from "next/link";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { ShopFilters } from "@/components/shop/ShopFilters";
-import { PLOT_PRODUCTS, REVIEWS, SITE } from "@/lib/data";
+import { PRODUCTS, REVIEWS, SITE } from "@/lib/data";
 import { useCartStore } from "@/lib/store";
 import { formatPrice } from "@/lib/utils";
 import type { FilterSize, FilterDelivery, ReserveSlug, Currency } from "@/types";
