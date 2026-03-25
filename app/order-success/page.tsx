@@ -1,11 +1,6 @@
 "use client";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// order-success – Post-Stripe-checkout success page
-// Reads ?session_id from URL, shows celebration + next steps
-// ─────────────────────────────────────────────────────────────────────────────
-
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -37,15 +32,8 @@ function OrderSuccessContent() {
     clearCart();
   }, [clearCart]);
 
-  // Clear cart once after successful payment
-  useEffect(() => {
-    clearCart();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <div className="min-h-screen bg-ice-black flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
-
       {/* Aurora */}
       <div className="aurora-orb w-[600px] h-[500px] bg-spirit/7 top-0 left-1/2 -translate-x-1/2 -translate-y-1/3" aria-hidden="true" style={{ animationDelay: "0s" }} />
       <div className="aurora-orb w-[400px] h-[400px] bg-glacier/6 bottom-0 right-0" aria-hidden="true" style={{ animationDelay: "-8s" }} />
@@ -69,7 +57,6 @@ function OrderSuccessContent() {
 
       {/* Content */}
       <div className="relative z-10 max-w-lg w-full text-center">
-
         {/* Success icon */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
@@ -97,7 +84,6 @@ function OrderSuccessContent() {
             Bárður Snæfellsás watches over your new plot.
             Your certificate and order details are on their way to your inbox.
           </p>
-
           {sessionId && (
             <p className="font-body text-xs text-white/25 mb-8">
               Order ref: <code className="text-white/40">{sessionId.slice(0, 20)}…</code>
@@ -181,6 +167,7 @@ function OrderSuccessContent() {
     </div>
   );
 }
+
 export default function OrderSuccessPage() {
   return (
     <Suspense fallback={
