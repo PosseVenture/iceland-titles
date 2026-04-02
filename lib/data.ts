@@ -10,11 +10,11 @@ import type {
 // ─── Site Constants ──────────────────────────────────────────────────────────
 export const SITE = {
   name:     "Icelandic Titles",
-  tagline:  "Become a Jarl, Lord or Lady of the Icelandic Highlands",
+  tagline:  "Become a Jarl, Baron or Baroness of Eyri í Kollafirði",
   taglineExtended:
-    "Become a Jarl, Lord or Lady of the Icelandic Highlands and Help Restore an Icelandic Nature Reserve",
+    "Become a Jarl, Baron or Baroness of Eyri í Kollafirði and Help Restore a Wild Westfjords Landscape",
   description:
-    "Claim your souvenir plot of land in the mystical Snæfellsnes Reserve and style yourself as Jarl, Lord or Lady of the Icelandic Highlands. Help restore Iceland's wild landscapes while connecting with the guardian spirit Bárður Snæfellsás and the ancient power of Snæfellsjökull glacier.",
+    "Claim your souvenir plot of land at Eyri í Kollafirði in the ancient Gufudalssveit valley of Vestfirðir — where the Huldufólk roam the mist, and the glacial crown of Snæfellsjökull watches over the fjord. Style yourself as Jarl, Baron or Baroness of Eyri í Kollafirði and help preserve one of Iceland's last great wildernesses.",
   url:   "https://icelandictitles.com",
   email: "hello@icelandictitles.com",
   phone: "+354 555 0100",
@@ -53,7 +53,7 @@ export const ADD_ONS: AddOnProduct[] = [
     id:   "plant-a-tree",
     name: "Plant a Tree",
     description:
-      "Help rewild Iceland by planting a native birch tree in our Snæfellsnes Reserve. Receive a personalised 'Plant a Tree' bookmark with huldufólk illustration.",
+      "Help rewild the Westfjords by planting a native birch tree at Eyri í Kollafirði. Receive a personalised 'Plant a Tree' bookmark with a Huldufólk illustration — in honour of the hidden people said to dwell in these very birch hollows.",
     prices: { EUR: 42, USD: 46, GBP: 36 },
     icon:  "🌿",
   },
@@ -61,7 +61,7 @@ export const ADD_ONS: AddOnProduct[] = [
     id:   "extra-certificate",
     name: "Extra Certificate",
     description:
-      "A second personalised A4 certificate — perfect if you want one to frame and one to keep.",
+      "A second personalised A4 certificate — perfect if you want one to frame and one to keep as a keepsake of your Eyri í Kollafirði title.",
     prices: { EUR: 12, USD: 13, GBP: 10 },
     icon:  "📜",
   },
@@ -74,10 +74,10 @@ export const PRODUCTS: PlotProduct[] = [
     id:          "eco-1sqft",
     size:        "1sqft",
     sqft:        1,
-    titleName:   "Jarl of Snæfellsnes",
-    tagline:     "Claim your mystical connection to the glacier",
+    titleName:   "Jarl of Eyri í Kollafirði",
+    tagline:     "Claim your ancient connection to the wild Westfjords",
     description:
-      "A digital souvenir pack — your name forever linked to the most mystical peninsula in Iceland. Perfect as an instant gift.",
+      "A digital souvenir pack — your name forever linked to the most remote and mystical fjordland in Iceland. The Huldufólk of Gufudalssveit will know you are here. Perfect as an instant gift.",
     deliveryType: "digital",
     prices:       { EUR: 77, USD: 83, GBP: 66 },
     stripePriceIds: {
@@ -88,12 +88,12 @@ export const PRODUCTS: PlotProduct[] = [
     featured:   false,
     bestSeller: false,
     includes: [
-      { icon: "📜", label: "Personalised PDF certificate",           detail: "A4, print-at-home quality"          },
-      { icon: "📍", label: "GPS plot coordinates",                   detail: "Your exact souvenir location"        },
-      { icon: "🗺",  label: "What3Words address",                    detail: "Three unique words mark your spot"   },
-      { icon: "👑", label: "Right to style yourself Jarl/Lord/Lady", detail: "Our registered trademark"            },
-      { icon: "📱", label: "Owner's app access",                     detail: "Dashboard & virtual tour"            },
-      { icon: "🌿", label: "Conservation contribution",              detail: "Helps restore Snæfellsnes"           },
+      { icon: "📜", label: "Personalised PDF certificate",                          detail: "A4, print-at-home quality"                     },
+      { icon: "📍", label: "GPS plot coordinates",                                  detail: "Your exact souvenir location at Eyri"          },
+      { icon: "🗺",  label: "What3Words address",                                   detail: "Three unique words mark your Westfjords spot"  },
+      { icon: "👑", label: "Right to style yourself Jarl of Eyri í Kollafirði",    detail: "Our registered trademark"                     },
+      { icon: "📱", label: "Owner's app access",                                    detail: "Dashboard & virtual tour of Vestfirðir"        },
+      { icon: "🌿", label: "Conservation contribution",                             detail: "Helps restore Eyri í Kollafirði"               },
     ],
     addOns: [ADD_ONS[0]],
   },
@@ -103,10 +103,10 @@ export const PRODUCTS: PlotProduct[] = [
     id:          "luxury-5sqft",
     size:        "5sqft",
     sqft:        5,
-    titleName:   "Lord / Lady of Snæfellsnes",
-    tagline:     "Luxury gift pack — straight from Iceland",
+    titleName:   "Baron / Baroness of Eyri í Kollafirði",
+    tagline:     "Luxury gift pack — straight from the Westfjords of Iceland",
     description:
-      "Our most popular pack — a beautifully presented physical gift box with a framing-quality certificate and volcanic coaster.",
+      "Our most popular pack — a beautifully presented physical gift box with a framing-quality certificate, volcanic coaster engraved with the Eyri reserve, and the noble title of Baron or Baroness of Eyri í Kollafirði.",
     deliveryType: "physical",
     prices:       { EUR: 110, USD: 119, GBP: 94 },
     stripePriceIds: {
@@ -117,15 +117,15 @@ export const PRODUCTS: PlotProduct[] = [
     featured:   true,
     bestSeller: true,
     includes: [
-      { icon: "📜", label: "A4 Framing-quality certificate",      detail: "Personalised + plot map"             },
-      { icon: "📦", label: "Iceland gift box & tissue paper",     detail: "Ready to give"                       },
-      { icon: "🪨", label: "Volcanic basalt coaster",             detail: "Snæfellsnes Reserve engraved"        },
-      { icon: "🗺",  label: "Snæfellsnes printed map",            detail: "With your plot highlighted"          },
-      { icon: "🔖", label: "Plant a Tree bookmark",               detail: "Huldufólk birch illustration"        },
-      { icon: "📍", label: "GPS + What3Words location",           detail: "Your unique souvenir plot"           },
-      { icon: "👑", label: "Right to style yourself Lord/Lady",   detail: "Our registered trademark"            },
-      { icon: "📱", label: "Owner's app + virtual tour",          detail: "Explore from anywhere"               },
-      { icon: "🌿", label: "Conservation contribution",           detail: "Snæfellsnes rewilding fund"          },
+      { icon: "📜", label: "A4 Framing-quality certificate",                                          detail: "Personalised + Eyri plot map"                 },
+      { icon: "📦", label: "Iceland gift box & tissue paper",                                         detail: "Ready to give"                                },
+      { icon: "🪨", label: "Volcanic basalt coaster",                                                 detail: "Eyri í Kollafirði Reserve engraved"           },
+      { icon: "🗺",  label: "Vestfirðir printed map",                                                 detail: "With your Eyri plot highlighted"               },
+      { icon: "🔖", label: "Plant a Tree bookmark",                                                   detail: "Huldufólk birch illustration"                 },
+      { icon: "📍", label: "GPS + What3Words location",                                               detail: "Your unique souvenir plot at Eyri"            },
+      { icon: "👑", label: "Right to style yourself Baron / Baroness of Eyri í Kollafirði",           detail: "Our registered trademark"                     },
+      { icon: "📱", label: "Owner's app + virtual tour",                                              detail: "Explore Vestfirðir from anywhere"              },
+      { icon: "🌿", label: "Conservation contribution",                                               detail: "Eyri í Kollafirði rewilding fund"              },
     ],
     addOns: [ADD_ONS[0], ADD_ONS[1]],
   },
@@ -135,10 +135,10 @@ export const PRODUCTS: PlotProduct[] = [
     id:          "luxury-10sqft",
     size:        "10sqft",
     sqft:        10,
-    titleName:   "High Jarl of Snæfellsnes",
-    tagline:     "The ultimate Iceland luxury experience",
+    titleName:   "High Jarl of Eyri í Kollafirði",
+    tagline:     "The ultimate Westfjords luxury experience",
     description:
-      "For those who demand the extraordinary — a full luxury collector's set, beautifully boxed and personally signed.",
+      "For those who answer the full call of the Westfjords — a collector's luxury set, beautifully boxed and personally signed, bearing the supreme title of High Jarl of Eyri í Kollafirði.",
     deliveryType: "physical",
     prices:       { EUR: 210, USD: 227, GBP: 179 },
     stripePriceIds: {
@@ -149,17 +149,17 @@ export const PRODUCTS: PlotProduct[] = [
     featured:   false,
     bestSeller: false,
     includes: [
-      { icon: "📜", label: "A3 Luxury framing certificate",           detail: "Museum-grade paper"                    },
-      { icon: "📦", label: "Premium collector's gift box",            detail: "Glacier-blue ribbon"                   },
-      { icon: "🪨", label: "Volcanic basalt coaster (2×)",            detail: "Gift-wrapped pair"                     },
-      { icon: "🗺",  label: "Large-format Snæfellsnes map",            detail: "A3 full-colour, frameable"             },
-      { icon: "🔖", label: "Plant a Tree bookmark",                   detail: "Huldufólk illustration"                },
-      { icon: "📍", label: "GPS + What3Words location",               detail: "Your exact souvenir plot"              },
-      { icon: "👑", label: "Right to style yourself High Jarl",       detail: "Expanded usage rights"                 },
-      { icon: "📱", label: "Owner's app + 3D explorer",               detail: "Premium dashboard tier"                },
-      { icon: "📖", label: "'Secrets of the Glacier' booklet",        detail: "Bárður & huldufólk lore"               },
-      { icon: "🌿", label: "Plant a Tree included (1 tree)",          detail: "Snæfellsnes birch rewilding"           },
-      { icon: "✍",  label: "Handwritten welcome note",               detail: "From our Iceland team"                 },
+      { icon: "📜", label: "A3 Luxury framing certificate",                                detail: "Museum-grade paper"                                  },
+      { icon: "📦", label: "Premium collector's gift box",                                 detail: "Fjord-blue ribbon"                                   },
+      { icon: "🪨", label: "Volcanic basalt coaster (2×)",                                 detail: "Gift-wrapped pair"                                   },
+      { icon: "🗺",  label: "Large-format Vestfirðir map",                                 detail: "A3 full-colour, frameable"                           },
+      { icon: "🔖", label: "Plant a Tree bookmark",                                        detail: "Huldufólk illustration"                              },
+      { icon: "📍", label: "GPS + What3Words location",                                    detail: "Your exact souvenir plot at Eyri"                    },
+      { icon: "👑", label: "Right to style yourself High Jarl of Eyri í Kollafirði",      detail: "Expanded usage rights"                               },
+      { icon: "📱", label: "Owner's app + 3D explorer",                                    detail: "Premium dashboard tier"                              },
+      { icon: "📖", label: "'Secrets of the Westfjords' booklet",                          detail: "Huldufólk lore & the Snæfellsjökull view"            },
+      { icon: "🌿", label: "Plant a Tree included (1 tree)",                               detail: "Eyri í Kollafirði birch rewilding"                   },
+      { icon: "✍",  label: "Handwritten welcome note",                                    detail: "From our Iceland team"                               },
     ],
     addOns: [ADD_ONS[0], ADD_ONS[1]],
   },
@@ -167,119 +167,112 @@ export const PRODUCTS: PlotProduct[] = [
 
 // ─── Reserve Data ─────────────────────────────────────────────────────────────
 export const RESERVE: Reserve = {
-  slug:     "snaefellsnes",
-  name:     "Snæfellsnes Reserve",
-  subtitle: "Under the glacier that guards the souls of Iceland",
+  slug:     "eyri-i-kollafirdi",
+  name:     "Eyri í Kollafirði Reserve",
+  subtitle: "Where the hidden people walk and Snæfellsjökull watches from across the fjord",
 
   description:
-    "Your souvenir plot lies within the magical Snæfellsnes peninsula, gazing directly at the legendary Snæfellsjökull glacier — a 1,446-metre ice-crowned stratovolcano revered as one of Earth's great energy centres.",
+    "Your souvenir plot lies within the ancient land of Eyri í Kollafirði, set in the Gufudalssveit valley of Vestfirðir — one of Iceland's most remote and spiritually charged corners. On clear days, the glacial crown of Snæfellsjökull rises like a vision across Kollafjörður, unchanged since the first Norse settlers raised their halls here.",
 
-  longDescription: `Stretching like a rugged arm into the North Atlantic, the Snæfellsnes peninsula is Iceland at its most mythical. At its tip stands Snæfellsjökull — a glacier-capped volcano so magnificent that Jules Verne chose it as the gateway to the centre of the Earth.
+  longDescription: `Vestfirðir — the Westfjords — is Iceland at its most primordial. Carved by glaciers over millions of years into a labyrinth of deep fjords and ancient plateaux, this is a landscape that resists the modern world. The roads here still yield to the weather. The silence is absolute. And the land remembers.
 
-But the glacier's true power runs deeper than fiction. The Snæfellsjökull is considered one of the planet's seven great energy centres — a spiritual chakra where the Earth's energy converges and radiates outward. Visitors routinely report overwhelming feelings of peace, clarity, and connection standing on its slopes.
+At Eyri í Kollafirði, within the Gufudalssveit valley, the earth feels different. The old farmsteads that have stood here since the Settlement Age speak of people who knew this land was alive — who heard voices in the wind off the fjord, who placed offerings at the mossy stones above the shore. The Huldufólk — Iceland's hidden people — are said to be especially present in Gufudalssveit. Locals will tell you without embarrassment: do not disturb the large rocks on the hillside. Something old and watchful lives inside them.
 
-At the heart of this mythology stands Bárður Snæfellsás — the peninsula's eternal guardian. Half-human, half-troll, Bárður was a settler chieftain who walked into the glacier and became its immortal protector. He is still venerated today; his carved figure watches over the reserve entrance at Arnarstapi.
+On clear days, the view across Kollafjörður is extraordinary. Snæfellsjökull — the glacier Jules Verne sent his heroes through, one of Earth's seven great energy centres — rises in the south like a beacon, ice-crowned and luminous. From the shores of Eyri í Kollafirði, it has watched over the people of Gufudalssveit for a thousand years. It watches still.
 
-Every lava field, every ancient rock formation across Snæfellsnes is said to house huldufólk — the hidden people. These beautiful, human-sized beings live alongside humans, unseen except by those with the sight. Road workers re-route roads around their suspected homes. Even the Icelandic government has been known to consult elf advisors before major construction.
+The Westfjords hold more than half of Iceland's entire coastline within their jagged embrace, yet fewer than 7,000 people call them home. This isolation has preserved not only the landscape but the stories — the sagas, the folklore, the deep Icelandic knowledge that the land is not merely ground underfoot, but a living presence deserving of reverence.
 
-Your souvenir plot is a piece of this living mythology.`,
+To claim a plot at Eyri í Kollafirði is not merely to buy a souvenir. It is to plant your name in earth that has been sacred since long before Iceland was a nation — earth that the hidden people still walk, earth from which, on a clear winter's night, you can watch the aurora dance above a glacier that Jules Verne called a gateway between worlds.`,
 
-  coordinates: { lat: 64.8147, lng: -23.7722 },
-  what3words:  "///glaciers.spirit.elf",
+  coordinates: { lat: 65.6038585, lng: -22.495283 },
+  what3words:  "///fjord.hidden.folk",
 
-  // Photo: Panoramic view of Snæfellsjökull glacier under a clear starry night
   heroImage:    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85",
-  heroImageAlt: "Mystical Snæfellsjökull glacier rising over Snæfellsnes Peninsula — source of great power, good spirits and guardian Bárður Snæfellsás",
+  heroImageAlt: "The wild fjord coastline of Eyri í Kollafirði in Vestfirðir — where ancient Norse land meets the sea and Snæfellsjökull watches from across Kollafjörður",
 
   galleryImages: [
     {
-      // Photo 1: Snæfellsjökull stratovolcano under starry night — glacier at dawn light
       src:     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80",
-      alt:     "Panoramic view of Snæfellsjökull stratovolcano glacier under a clear starry night sky, Snæfellsnes Peninsula — source of good spirits and hidden people folklore",
-      caption: "The glacier at dawn",
+      alt:     "Dawn light over the deep fjords of Vestfirðir, Iceland — the ancient Gufudalssveit valley reflected in still water, Eyri í Kollafirði reserve in the foreground",
+      caption: "Dawn over Kollafjörður",
     },
     {
-      // Photo 2: Vivid northern lights — aurora over the glacier
       src:     "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80",
-      alt:     "Vivid green and purple northern lights dancing above the snow-capped Snæfellsjökull glacier at night, Snæfellsnes Peninsula, Iceland — mystical energy centre and guardian spirit landscape",
-      caption: "Aurora over the glacier",
+      alt:     "Vivid green and purple northern lights dancing above the fjords and mountains of Vestfirðir, Iceland — ancient Huldufólk country of Gufudalssveit lit by the aurora",
+      caption: "Aurora over the fjord",
     },
     {
-      // Photo 3: Mystical sunrise mist — evocative of huldufólk lava formations
       src:     "https://images.unsplash.com/photo-1557683316-973673baf926?w=900&q=80",
-      alt:     "Mystical sunrise mist surrounding the peak of Snæfellsjökull glacier, Iceland — legendary energy centre and home of guardian spirit Bárður Snæfellsás, evocative of huldufólk lava formations",
-      caption: "Huldufólk lava fields",
+      alt:     "Ethereal mist rising through ancient birch woodland in Gufudalssveit, Vestfirðir — the hidden people are said to walk between the trees on mornings like this",
+      caption: "Huldufólk birch hollows",
     },
     {
-      // Photo 4: Golden sunset ridges — Djúpalónssandur black beach atmosphere
       src:     "https://images.unsplash.com/photo-1540979388789-7cee28a1cdc9?w=900&q=80",
-      alt:     "Golden sunset light illuminating the rugged ridges of Snæfellsjökull glacier, Snæfellsnes, Iceland — powerful spiritual atmosphere evoking the black sand beaches and dramatic volcanic coastline",
-      caption: "Djúpalónssandur black beach",
+      alt:     "Snæfellsjökull glacier rising luminously above the sea as seen across Kollafjörður from Eyri í Kollafirði — the mystical sentinel that Jules Verne made the gateway to another world",
+      caption: "Snæfellsjökull from across the fjord",
     },
     {
-      // Photo 5: Northern lights panorama — wildlife/puffin cliff atmosphere
       src:     "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80",
-      alt:     "Northern lights illuminating the Snæfellsnes coastal cliffs at night, Iceland — the same dramatic seabird habitat where puffins nest under the protection of guardian spirit Bárður",
-      caption: "Snæfellsnes puffin colony",
+      alt:     "The dramatic sea cliffs of Vestfirðir at dusk — nesting ground for Atlantic puffin, white-tailed eagle and kittiwake along the Eyri í Kollafirði coastline",
+      caption: "Westfjords seabird cliffs",
     },
     {
-      // Photo 6: Wide panoramic glacier — Arnarstapi coastline mood
       src:     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
-      alt:     "Dramatic panoramic view of Snæfellsjökull glacier and Snæfellsnes coastline at night — where Arnarstapi sea arch and guardian Bárður's carved statue watch over the mystical peninsula",
-      caption: "Arnarstapi sea arch",
+      alt:     "Sweeping panorama of a Vestfirðir fjord at last light — the immense, ancient silence of the Westfjords that has drawn Norse settlers, hidden people and wanderers for over a thousand years",
+      caption: "The scale of the Westfjords",
     },
   ],
 
   features: [
     {
-      icon: "🗻",
-      title: "Snæfellsjökull glacier",
+      icon: "🌊",
+      title: "Eyri í Kollafirði",
       description:
-        "Direct views of the 1,446m ice-crowned volcano — one of Earth's seven energy centres and Jules Verne's gateway to the centre of the Earth.",
+        "Your plot sits within the ancient Gufudalssveit valley at the shores of Kollafjörður — one of the most remote and unspoiled landscapes in all of Iceland's Westfjords.",
     },
     {
-      icon: "👁",
-      title: "Guardian spirit Bárður",
+      icon: "🏔",
+      title: "View to Snæfellsjökull",
       description:
-        "The eternal protector of the peninsula — half-troll, half-human — who walked into the glacier and became its immortal guardian.",
+        "On clear days, the glacial crown of Snæfellsjökull — one of Earth's great energy centres and Jules Verne's gateway to the centre of the Earth — rises visibly across the fjord to the south.",
     },
     {
       icon: "🧝",
-      title: "Huldufólk (hidden people)",
+      title: "Huldufólk of Gufudalssveit",
       description:
-        "The lava fields teem with elves and hidden people. Many roads are re-routed to avoid disturbing their ancient homes.",
+        "The people of Gufudalssveit have long known the land here is alive. The Huldufólk — Iceland's hidden people — are said to dwell in the rocks, the birch hollows, and the hillsides above the shore. Do not move the old stones.",
     },
     {
       icon: "🐦",
-      title: "Arctic wildlife",
+      title: "Westfjords wildlife",
       description:
-        "Puffins, arctic foxes, harbour seals, orca and minke whales frequent the peninsula's extraordinary ecosystems.",
+        "Atlantic puffin, white-tailed eagle, arctic fox and harbour seal frequent the Eyri coastline. The fjord waters are rich with seabird life year-round.",
     },
     {
-      icon: "🌊",
-      title: "Dramatic coastline",
+      icon: "🌿",
+      title: "Ancient birch & lava",
       description:
-        "Black sand beaches, sea arches, basalt columns and sea stacks — a geological spectacle shaped by fire and ice.",
+        "Native birch woodland clings to the valley sides above Eyri — one of the most intact remnants of Iceland's original forest cover, where rewilding work is already underway.",
     },
     {
       icon: "♾",
-      title: "Earth energy centre",
+      title: "Settlement-Age heritage",
       description:
-        "Considered one of the planet's most powerful spiritual vortexes — a place of transformation and ancient power.",
+        "Farmsteads in Gufudalssveit date to the Settlement Age — the era of the first Norse arrivals. This is land that has been named, tended, and revered for over a thousand years.",
     },
   ],
 
   mysticalFacts: [
-    "Snæfellsjökull is listed as one of Earth's seven great chakra energy centres.",
-    "Jules Verne's Professor Lidenbrock enters the Earth here in 'Journey to the Centre of the Earth' (1864).",
-    "Bárður Snæfellsás is still venerated — his carved figure stands at Arnarstapi.",
-    "Over 54% of Icelanders believe in, or don't rule out the existence of, huldufólk.",
-    "The Icelandic Road Administration has re-routed roads to protect suspected elf habitats.",
-    "The glacier is predicted to be ice-free by 2050 — making conservation here urgent.",
+    "Snæfellsjökull glacier — visible from Eyri í Kollafirði on clear days — is listed as one of Earth's seven great chakra energy centres.",
+    "Jules Verne's 'Journey to the Centre of the Earth' (1864) begins beneath Snæfellsjökull, the glacier you can see from your plot.",
+    "Over 54% of Icelanders believe in, or don't rule out the existence of, the Huldufólk — Iceland's hidden people.",
+    "The people of Gufudalssveit say the large mossy rocks above the Eyri shore must not be disturbed — the hidden people live inside them.",
+    "The Icelandic Road Administration has genuinely re-routed roads to protect suspected Huldufólk habitats in the Westfjords.",
+    "Vestfirðir holds more than half of Iceland's entire coastline, yet fewer than 7,000 people call it home — one of Europe's least populated regions.",
   ],
 
   conservation:
-    "Your souvenir purchase directly funds rewilding work: native birch woodland restoration, erosion control on volcanic slopes, Arctic fox and seabird habitat protection, and trail maintenance to protect the fragile lava fields where the huldufólk are said to dwell.",
+    "Your souvenir purchase directly funds rewilding work at Eyri í Kollafirði: native birch woodland restoration in the Gufudalssveit valley, coastal erosion control along the Kollafjörður shoreline, arctic fox and seabird habitat protection, and the careful stewardship of the ancient lava and rock formations where the Huldufólk are said to dwell.",
 };
 
 // ─── Reviews ─────────────────────────────────────────────────────────────────
@@ -291,7 +284,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     date: "2024-11-12",
     title: "A genuinely magical gift",
-    body: "I bought the 5 sq ft pack as a birthday gift for my husband who is obsessed with Icelandic mythology. He cried. The certificate is beautiful, the coaster is engraved perfectly, and the whole experience of being a 'Lord of Snæfellsnes' has given him such joy.",
+    body: "I bought the 5 sq ft pack as a birthday gift for my husband who is obsessed with Icelandic mythology. He cried. The certificate is beautiful, the coaster is engraved perfectly, and the whole experience of being a 'Baron of Eyri í Kollafirði' has given him such joy. He's already planning a trip to visit the Westfjords.",
     verified: true,
   },
   {
@@ -301,7 +294,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     date: "2024-10-28",
     title: "Stood on my plot — extraordinary",
-    body: "We actually visited the reserve while on holiday. To stand on the land I 'own' with the glacier in the background, thinking about Bárður and the elves — I cannot describe it. The What3Words coordinates took us exactly there. Unforgettable.",
+    body: "We actually visited Eyri í Kollafirði while touring the Westfjords. To stand on the land with the fjord in front of you and Snæfellsjökull visible across the water — I cannot describe it. The What3Words coordinates took us exactly there. On the way back we saw what the locals called a 'Huldufólk stone'. We did not disturb it.",
     verified: true,
   },
   {
@@ -311,7 +304,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     date: "2024-12-03",
     title: "Bought for myself — no regrets",
-    body: "I'm a Lady of Snæfellsnes now and I put it on my email signature. My colleagues think I'm hilarious. The certificate looks stunning framed. Also I genuinely feel a connection to Iceland's conservation effort.",
+    body: "I'm a Baroness of Eyri í Kollafirði now and I put it on my email signature. My colleagues think I'm hilarious. The certificate looks stunning framed. Also I genuinely feel a connection to the Westfjords conservation effort — those birch rewilding updates are wonderful.",
     verified: true,
   },
   {
@@ -321,7 +314,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     date: "2024-09-17",
     title: "The 10 sq ft pack is extraordinary",
-    body: "Everything in the luxury box is premium — the A3 certificate is museum-quality, the booklet about Bárður and the huldufólk is genuinely fascinating, and the handwritten note was a lovely touch. My wife is now officially a Lady of Snæfellsnes.",
+    body: "Everything in the luxury box is premium — the A3 certificate is museum-quality, the booklet about the Huldufólk of Gufudalssveit and the view to Snæfellsjökull is genuinely fascinating, and the handwritten note was a lovely touch. My wife is now officially the High Baroness of Eyri í Kollafirði in her own mind.",
     verified: true,
   },
   {
@@ -331,7 +324,7 @@ export const REVIEWS: Review[] = [
     rating: 4,
     date: "2024-11-30",
     title: "Beautiful. Slight shipping delay handled perfectly.",
-    body: "The gift box arrived beautifully packaged. Slight delay due to Iceland postal service but customer support kept me updated. The product itself is stunning. My friend who received it immediately looked up flights to Iceland.",
+    body: "The gift box arrived beautifully packaged. Slight delay due to Iceland postal service but customer support kept me updated. The product itself is stunning. My friend who received it immediately looked up the Westfjords on Google Earth and found her plot coordinates.",
     verified: true,
   },
   {
@@ -341,7 +334,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     date: "2025-01-08",
     title: "My family's favourite Christmas gift",
-    body: "I bought three — one each for my mother, sister and myself. We are all now Ladies of Snæfellsnes. The huldufólk story in the booklet had us captivated on Christmas Day. We've booked the Glacier Soul Walk tour for summer.",
+    body: "I bought three — one each for my mother, sister and myself. We are now all Baronesses of Eyri í Kollafirði. The Huldufólk story in the booklet had us captivated on Christmas Day. We have booked the Fjordside Heritage Walk for next summer and cannot wait to see the view to Snæfellsjökull.",
     verified: true,
   },
 ];
@@ -349,20 +342,20 @@ export const REVIEWS: Review[] = [
 // ─── Guided Tours ─────────────────────────────────────────────────────────────
 export const GUIDED_TOURS: GuidedTour[] = [
   {
-    id: "glacier-soul-walk",
-    name: "Glacier Soul Walk",
-    duration: "6 hours",
-    groupSize: "Max 8",
-    difficulty: "Moderate",
+    id: "fjordside-heritage-walk",
+    name: "Eyri Fjordside Heritage Walk",
+    duration: "4 hours",
+    groupSize: "Max 10",
+    difficulty: "Easy–Moderate",
     description:
-      "Walk the sacred lava fields below Snæfellsjökull, visit Arnarstapi to meet Bárður's carved guardian figure, and learn the deep folklore of the huldufólk from our local storyteller guide.",
-    price: { EUR: 149, USD: 164, GBP: 126 },
+      "Walk the ancient shores of Kollafjörður to your reserve at Eyri í Kollafirði. Your guide — a Gufudalssveit local — shares the deep folklore of the Huldufólk, the saga-age history of the valley's farmsteads, and points out the sacred stones that must never be moved. On clear days, Snæfellsjökull fills the southern horizon.",
+    price: { EUR: 89, USD: 98, GBP: 75 },
     dates: ["2025-06-14", "2025-06-28", "2025-07-12", "2025-07-26", "2025-08-09"],
     includes: [
-      "Expert local folklore guide",
-      "Lava field exploration",
-      "Bárður statue visit at Arnarstapi",
-      "Huldufólk story session",
+      "Gufudalssveit local guide",
+      "Coastal walk to your Eyri plot",
+      "Huldufólk stone sites visit",
+      "Saga-age farmstead history",
       "Packed Icelandic lunch",
       "Certificate of pilgrimage",
     ],
@@ -374,33 +367,34 @@ export const GUIDED_TOURS: GuidedTour[] = [
     groupSize: "Max 6",
     difficulty: "Easy",
     description:
-      "As the sun sets over Snæfellsjökull, gather at your souvenir plot to watch the Northern Lights dance over the glacier — the spirits are said to travel within the aurora.",
+      "As darkness falls over Vestfirðir, gather at your souvenir plot at Eyri and watch the Northern Lights arc above Kollafjörður. The Huldufólk are said to be most active on these long, silent nights. Across the fjord, Snæfellsjökull glows beneath the aurora.",
     price: { EUR: 119, USD: 131, GBP: 100 },
     dates: ["2025-09-20", "2025-10-04", "2025-10-18", "2025-11-01", "2025-11-15"],
     includes: [
       "Night photography guidance",
       "Wool blankets and hot skyr drink",
       "Aurora prediction briefing",
-      "Spirit storytelling session",
+      "Huldufólk storytelling session",
       "Plot coordinates torchlit visit",
     ],
   },
   {
-    id: "elf-rock-expedition",
-    name: "Elf Rock Expedition",
-    duration: "4 hours",
-    groupSize: "Max 10",
-    difficulty: "Easy",
+    id: "huldufolk-wilderness-expedition",
+    name: "Huldufólk Wilderness Expedition",
+    duration: "6 hours",
+    groupSize: "Max 8",
+    difficulty: "Moderate",
     description:
-      "A family-friendly journey through the most famous huldufólk habitats on the peninsula — ancient lava formations locals swear are home to Iceland's hidden people.",
-    price: { EUR: 89, USD: 98, GBP: 75 },
+      "A full-day journey deep into the Gufudalssveit valley above Eyri í Kollafirði — through birch woodland, past ancient lava formations, and along the ridge with unobstructed views across the fjord to Snæfellsjökull. Your folklore specialist identifies Huldufólk habitats and shares the living oral tradition of the Westfjords.",
+    price: { EUR: 149, USD: 164, GBP: 126 },
     dates: ["2025-06-07", "2025-06-21", "2025-07-05", "2025-07-19", "2025-08-02"],
     includes: [
-      "Huldufólk folklore specialist",
-      "Guided lava field walk",
-      "Elf-spotting kit for children",
-      "Illustrated huldufólk booklet",
-      "Snæfellsnes herbal tea tasting",
+      "Westfjords folklore specialist",
+      "Full-day guided valley trek",
+      "Huldufólk habitat identification",
+      "Ridge viewpoint — Snæfellsjökull panorama",
+      "Illustrated Huldufólk booklet",
+      "Gufudalssveit herbal tea tasting",
     ],
   },
 ];
@@ -412,21 +406,21 @@ export const FAQS: FaqItem[] = [
     category: "general",
     question: "What exactly am I buying?",
     answer:
-      "You are purchasing a souvenir novelty gift — not a real estate transaction. You receive a beautifully personalised certificate granting you the right to style yourself as Jarl, Lord or Lady of the Snæfellsnes Highlands (our registered trademark), along with a dedicated GPS-referenced plot within our managed Snæfellsnes Reserve. This is purely for enjoyment. Icelandic Titles retains full legal ownership of the land.",
+      "You are purchasing a souvenir novelty gift — not a real estate transaction. You receive a beautifully personalised certificate granting you the right to style yourself as Jarl, Baron or Baroness of Eyri í Kollafirði (our registered trademark), along with a dedicated GPS-referenced plot within our managed Eyri í Kollafirði Reserve in Gufudalssveit, Vestfirðir. This is purely for enjoyment. Icelandic Titles retains full legal ownership of the land.",
   },
   {
     id: "real-land",
     category: "legal",
     question: "Am I buying real land in Iceland?",
     answer:
-      "No. This is a souvenir gift only. Under Icelandic property law (fasteignalög), land ownership requires formal registration in the national property register (þjóðskrá). No such registration occurs with our souvenir plots. Icelandic Titles ehf. retains legal ownership of all reserve land.",
+      "No. This is a souvenir gift only. Under Icelandic property law (fasteignalög), land ownership requires formal registration in the national property register (þjóðskrá). No such registration occurs with our souvenir plots. Icelandic Titles ehf. retains legal ownership of all reserve land at Eyri í Kollafirði.",
   },
   {
     id: "title-use",
     category: "titles",
-    question: "Can I really call myself a Lord, Lady or Jarl?",
+    question: "Can I really call myself a Jarl, Baron or Baroness of Eyri í Kollafirði?",
     answer:
-      "Yes — as a fun, novelty title! 'Jarl/Lord/Lady of Snæfellsnes' is our registered trademark and souvenir style. You may use it socially, on social media, in email signatures, and wherever you like for personal enjoyment. It carries no legal weight and is not recognised by any government.",
+      "Yes — as a fun, novelty title! 'Jarl/Baron/Baroness of Eyri í Kollafirði' is our registered trademark and souvenir style. You may use it socially, on social media, in email signatures, and wherever you like for personal enjoyment. It carries no legal weight and is not recognised by any government. Many of our owners use it proudly on personal stationery and at dinner parties.",
   },
   {
     id: "delivery-speed",
@@ -454,34 +448,34 @@ export const FAQS: FaqItem[] = [
     category: "conservation",
     question: "How does my purchase help Iceland?",
     answer:
-      "A meaningful portion of every sale goes directly to Snæfellsnes conservation work: native birch woodland restoration, erosion control on volcanic slopes, Arctic fox and seabird habitat protection, and trail maintenance to protect the fragile lava fields.",
+      "A meaningful portion of every sale goes directly to conservation work at Eyri í Kollafirði in Gufudalssveit, Vestfirðir: native birch woodland restoration, coastal erosion control along the Kollafjörður shoreline, arctic fox and seabird habitat protection, and the careful stewardship of the ancient rock formations where the Huldufólk are said to dwell.",
   },
   {
     id: "plant-tree",
     category: "conservation",
     question: "What is the 'Plant a Tree' add-on?",
     answer:
-      "For €19 extra, a native Icelandic birch tree will be planted in your name in the Snæfellsnes Reserve. You'll receive a personalised bookmark with a huldufólk illustration and your tree's approximate location. Iceland was once 25–40% forested; today less than 2% has tree cover — your tree genuinely matters.",
-  },
-  {
-    id: "bardur",
-    category: "mystical",
-    question: "Who is Bárður Snæfellsás?",
-    answer:
-      "Bárður Snæfellsás was a legendary Norse settler of the Snæfellsnes peninsula — half human, half troll by heritage. After tragic events involving his family, he retreated into the Snæfellsjökull glacier and became its eternal guardian spirit. Icelanders still venerate him today; his carved figure stands at Arnarstapi.",
+      "For €42 extra, a native Icelandic birch tree will be planted in your name at Eyri í Kollafirði in the Gufudalssveit valley. You'll receive a personalised bookmark with a Huldufólk illustration and your tree's approximate location. Iceland was once 25–40% forested; today less than 2% has tree cover — in the Westfjords, your tree genuinely matters.",
   },
   {
     id: "huldufolk",
     category: "mystical",
-    question: "Are huldufólk (elves / hidden people) real?",
+    question: "Who are the Huldufólk — and why do people say they live at Eyri?",
     answer:
-      "In Iceland, the huldufólk are taken very seriously. Over 54% of Icelanders believe in them or won't rule out their existence. They are described as beautiful, human-sized beings who live in rocks, hills and lava formations. Roads have genuinely been re-routed to avoid disturbing suspected elf homes. The folklore is ancient, rich, and deeply woven into life on Snæfellsnes.",
+      "The Huldufólk are Iceland's hidden people — beautiful, human-sized beings said to live in rocks, hills and ancient lava formations, invisible to most but very much present. Over 54% of Icelanders believe in them or won't rule out their existence. In Gufudalssveit, the tradition is especially strong: locals speak of specific rocks above the Eyri shore that must not be disturbed. Roads in the Westfjords have been genuinely re-routed to avoid suspected Huldufólk habitats. The folklore is ancient, living, and deeply woven into daily life here.",
+  },
+  {
+    id: "snaefellsjokull-view",
+    category: "mystical",
+    question: "Can you really see Snæfellsjökull from Eyri í Kollafirði?",
+    answer:
+      "Yes — on clear days, Snæfellsjökull is visible across Kollafjörður to the south. It rises as a luminous, ice-crowned peak above the water, unmistakable and extraordinary. Snæfellsjökull is considered one of Earth's seven great energy centres and was made famous by Jules Verne as the gateway to the centre of the Earth in his 1864 novel. From Eyri í Kollafirði, it has watched over the people of Gufudalssveit for a thousand years.",
   },
   {
     id: "visit-plot",
     category: "plots",
     question: "Can I visit my souvenir plot in person?",
     answer:
-      "Absolutely! Your GPS coordinates and What3Words address will take you within metres of your designated souvenir plot. The Snæfellsnes Reserve is a publicly accessible area within Snæfellsjökull National Park. Plot owners also receive 10% off all our guided tours.",
+      "Absolutely. Your GPS coordinates (65.6038585°N, 22.4952°W) and What3Words address will take you within metres of your designated souvenir plot at Eyri í Kollafirði. The Westfjords are one of Iceland's most spectacular and least-visited regions — standing on your own piece of this ancient landscape with the fjord before you and Snæfellsjökull on the horizon is an unforgettable experience. Plot owners receive 10% off all our guided tours.",
   },
 ];
