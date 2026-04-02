@@ -16,10 +16,10 @@ import { ShopFaq }             from "@/components/shop/ShopFaq";
 export const metadata: Metadata = {
   title:       "Buy a Souvenir Plot — Icelandic Titles",
   description:
-    "Choose your souvenir plot in the mystical Snæfellsnes Reserve. 1 sq ft Eco Pack (€49), 5 sq ft Luxury Gift Pack (€69), or 10 sq ft Luxury Pack (€109). Free worldwide shipping. 90-day guarantee.",
+    "Choose your souvenir plot in the mystical Eyri in Kollafirdi. 1 sq ft Eco Pack (€49), 5 sq ft Luxury Gift Pack (€69), or 10 sq ft Luxury Pack (€109). Free worldwide shipping. 90-day guarantee.",
   openGraph: {
     title:       "Buy a Souvenir Plot — Icelandic Titles",
-    description: "Own a piece of Snæfellsnes. Personalised certificate, GPS coordinates, and souvenir Jarl/Lord/Lady title rights.",
+    description: "Own a piece of Vestfjordum in Iceland. Personalised certificate, GPS coordinates, and souvenir Jarl/Baron/Baroness title rights.",
     url:         `${SITE.url}/buy-a-plot`,
   },
 };
@@ -46,14 +46,14 @@ export default function BuyAPlotPage() {
             {/* Section label */}
             <div className="text-center mb-12">
               <p className="eyebrow justify-center mb-3">
-                Three ways to own a piece of Snæfellsnes
+                Three ways to own a piece of Vestfjordum
               </p>
               <h2 className="font-display text-4xl md:text-5xl font-light text-white">
                 Choose your souvenir plot
               </h2>
               <p className="font-body text-base text-white/45 mt-4 max-w-xl mx-auto leading-relaxed">
                 All plots include a personalised certificate, GPS coordinates and plot location,
-                and the right to style yourself as Jarl, Lord or Lady of Snæfellsnes.
+                and the right to style yourself as Jarl, Baron or Baroness of Eyri í Kollafirdi.
                 Free worldwide shipping on every order.
               </p>
             </div>
