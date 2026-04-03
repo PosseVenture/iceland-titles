@@ -1,12 +1,12 @@
 "use client";
-import { useState, useId, useEffect }        from "react";
+import { useState, useId, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Check, Minus, Plus, ChevronDown, ChevronUp, ShoppingCart,
 } from "lucide-react";
-import { cn, formatPrice }         from "@/lib/utils";
-import { useCartStore }            from "@/lib/store";
-import { Badge }                   from "@/components/ui/Badge";
+import { cn, formatPrice } from "@/lib/utils";
+import { useCartStore } from "@/lib/store";
+import { Badge } from "@/components/ui/Badge";
 import type { PlotProduct, TitleStyle } from "@/types";
 
 function IncludeRow({ icon, label, detail }: { icon: string; label: string; detail?: string }) {
@@ -28,51 +28,53 @@ export function ProductCard({ product, index }: { product: PlotProduct; index: n
   const uid = useId();
   const { addItem, currency } = useCartStore();
 
-  const [titleStyle,   setTitleStyle]   = useState<TitleStyle>("Lord");
-  const [name,         setName]         = useState("");
-  const [giftMessage,  setGiftMessage]  = useState("");
-  const [quantity,     setQuantity]     = useState(1);
-  const [plantATree,   setPlantATree]   = useState(false);
-  const [showMsg,      setShowMsg]      = useState(false);
-  const [showAll,      setShowAll]      = useState(false);
-  const [nameError,    setNameError]    = useState("");
+  const [titleStyle, setTitleStyle] = useState<TitleStyle>("Baron");
+  const [name, setName] = useState("");
+  const [giftMessage, setGiftMessage] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [plantATree, setPlantATree] = useState(false);
+  const [showMsg, setShowMsg] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const [nameError, setNameError] = useState("");
   const [addedState, setAddedState] = useState<"idle" | "added">("idle");
-useEffect(() => {
-  if (addedState === "added") {
-    setTimeout(() => {
-      setAddedState("idle");
-      setName("");
-      setGiftMessage("");
-      setQuantity(1);
-      setPlantATree(false);
-      setShowMsg(false);
-    }, 3000);
-  }
-}, [addedState]);
+
+  useEffect(() => {
+    if (addedState === "added") {
+      setTimeout(() => {
+        setAddedState("idle");
+        setName("");
+        setGiftMessage("");
+        setQuantity(1);
+        setPlantATree(false);
+        setShowMsg(false);
+      }, 3000);
+    }
+  }, [addedState]);
 
   const plantAddon = product.addOns?.find((a) => a.id === "plant-a-tree") ?? null;
-  const showPlant  = product.deliveryType === "physical" && plantAddon !== null;
-
+  const showPlant = product.deliveryType === "physical" && plantAddon !== null;
   const SHOW_N = 5;
-  const rows   = showAll ? product.includes : product.includes.slice(0, SHOW_N);
+  const rows = showAll ? product.includes : product.includes.slice(0, SHOW_N);
 
-  // live price
   const extraPrice = showPlant && plantATree && plantAddon ? plantAddon.prices[currency] : 0;
-  const lineTotal  = product.prices[currency] * quantity + extraPrice;
+  const lineTotal = product.prices[currency] * quantity + extraPrice;
 
   function handleAdd() {
-    if (!name.trim()) { setNameError("Please enter the name for the certificate."); return; }
+    if (!name.trim()) {
+      setNameError("Please enter the name for the certificate.");
+      return;
+    }
     setNameError("");
 
     addItem({
-      productId:     product.id,
-      productName:   product.titleName,
-      plotSize:      product.size,
-      price:         product.prices[currency],
+      productId: product.id,
+      productName: product.titleName,
+      plotSize: product.size,
+      price: product.prices[currency],
       currency,
       titleStyle,
       recipientName: name.trim(),
-      giftMessage:   giftMessage.trim() || undefined,
+      giftMessage: giftMessage.trim() || undefined,
       quantity,
       addOns:
         showPlant && plantATree && plantAddon
@@ -81,9 +83,7 @@ useEffect(() => {
       deliveryType: product.deliveryType,
     });
 
-	setAddedState("added");
-	setTimeout(() => setAddedState("idle"), 2800);
-    setName(""); setGiftMessage(""); setQuantity(1); setPlantATree(false); setShowMsg(false);
+    setAddedState("added");
   }
 
   return (
@@ -114,11 +114,9 @@ useEffect(() => {
             {product.deliveryType === "digital" ? "Digital delivery" : "Physical gift box"}
           </Badge>
         </div>
-
         <p className="eyebrow mb-2">{product.sqft} sq ft souvenir plot</p>
         <h2 className="font-display text-2xl md:text-3xl font-semibold text-white mb-1">{product.titleName}</h2>
         <p className="font-body text-sm text-white/45 italic mb-4">{product.tagline}</p>
-
         <div className="flex items-baseline gap-3 mb-2">
           <span className="font-display text-5xl font-light text-glacier leading-none">
             {formatPrice(product.prices[currency], currency)}
@@ -157,19 +155,23 @@ useEffect(() => {
 
       {/* Form */}
       <div className="p-6 space-y-5 flex-1">
-
         {/* Title style */}
         <div>
           <p id={`${uid}-ts`} className="font-body text-xs text-white/45 mb-2">Title style</p>
           <div role="group" aria-labelledby={`${uid}-ts`}
             className="grid grid-cols-3 rounded-xl overflow-hidden border border-white/10">
-            {(["Jarl", "Lord", "Lady"] as TitleStyle[]).map((s) => (
-              <button key={s} type="button" onClick={() => setTitleStyle(s)} aria-pressed={titleStyle === s}
+            {(["Jarl", "Baron", "Baroness"] as TitleStyle[]).map((s) => (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setTitleStyle(s)}
                 className={cn(
-                  "py-2.5 text-sm font-display font-semibold transition-all duration-150",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-glacier",
-                  titleStyle === s ? "bg-glacier text-ice-black" : "text-white/50 hover:text-white hover:bg-white/8"
-                )}>
+                  "px-4 py-3 text-sm font-medium transition-all",
+                  titleStyle === s
+                    ? "bg-glacier text-ice-black font-semibold"
+                    : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
+                )}
+              >
                 {s}
               </button>
             ))}
@@ -229,7 +231,7 @@ useEffect(() => {
           <div className="flex items-center rounded-xl border border-white/10 overflow-hidden w-fit">
             <button type="button" onClick={() => setQuantity((q) => Math.max(1, q - 1))} disabled={quantity <= 1}
               aria-label="Decrease quantity"
-              className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/8 transition-all border-r border-white/10 disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-glacier">
+              className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/8 transition-all border-r border-white/10 disabled:opacity-30 disabled:cursor-not-allowed">
               <Minus className="w-4 h-4" aria-hidden="true" />
             </button>
             <span className="w-12 text-center font-display font-semibold text-white text-sm" aria-live="polite">
@@ -237,23 +239,18 @@ useEffect(() => {
             </span>
             <button type="button" onClick={() => setQuantity((q) => Math.min(10, q + 1))} disabled={quantity >= 10}
               aria-label="Increase quantity"
-              className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/8 transition-all border-l border-white/10 disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-glacier">
+              className="w-10 h-10 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/8 transition-all border-l border-white/10 disabled:opacity-30 disabled:cursor-not-allowed">
               <Plus className="w-4 h-4" aria-hidden="true" />
             </button>
           </div>
         </div>
 
-        {/* ── Plant a Tree ───────────────────────────────────────────────────
-            Native <input type="checkbox"> controlled by React state.
-            The <label> wraps everything so clicking anywhere toggles it.
-            NO nested onClick, NO sr-only on the input, NO event tricks.
-        ── */}
+        {/* Plant a Tree */}
         {showPlant && plantAddon && (
           <div>
             <p className="font-body text-xs text-white/35 uppercase tracking-[0.14em] mb-2">
               Optional add-on
             </p>
-
             <label
               htmlFor={`${uid}-plant`}
               className={cn(
@@ -264,9 +261,7 @@ useEffect(() => {
                   : "border-white/10 hover:border-spirit/25 hover:bg-spirit/[0.03]"
               )}
             >
-              {/* Native checkbox — visible but transparent, covering the tick box area */}
               <div className="relative w-5 h-5 flex-shrink-0 mt-0.5">
-                {/* Styled box underneath */}
                 <span
                   aria-hidden="true"
                   className={cn(
@@ -276,7 +271,6 @@ useEffect(() => {
                 >
                   {plantATree && <Check className="w-3 h-3 text-ice-black" />}
                 </span>
-                {/* Real checkbox on top — opacity-0 so native behaviour fires */}
                 <input
                   id={`${uid}-plant`}
                   type="checkbox"
@@ -286,7 +280,6 @@ useEffect(() => {
                   aria-label={`Add ${plantAddon.name} for ${formatPrice(plantAddon.prices[currency], currency)}`}
                 />
               </div>
-
               <div className="flex-1 min-w-0 pointer-events-none">
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-base" aria-hidden="true">{plantAddon.icon}</span>
