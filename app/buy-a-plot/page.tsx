@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Choose your souvenir plot in the mystical Eyri in Kollafirdi. 1 sq ft Eco Pack (€49), 5 sq ft Luxury Gift Pack (€69), or 10 sq ft Luxury Pack (€109). Free worldwide shipping. 90-day guarantee.",
   openGraph: {
     title:       "Buy a Souvenir Plot — Icelandic Titles",
-    description: "Own a piece of Vestfjordum in Iceland. Personalised certificate, GPS coordinates, and souvenir Jarl/Baron/Baroness title rights.",
+    description: "Own a piece of Vestfirdir in Iceland. Personalised certificate, GPS coordinates, and souvenir Jarl/Baron/Baroness title rights.",
     url:         `${SITE.url}/buy-a-plot`,
   },
 };

@@ -16,10 +16,10 @@ import { AsSeenOn }         from "@/components/sections/AsSeenOn";
 import { CTABanner }        from "@/components/sections/CTABanner";
 
 export const metadata: Metadata = {
-  title:       `${SITE.name} — ${SITE.tagline}`,
+  title:       "Icelandic Titles — Become a Jarl, Baron or Baroness of Eyri í Kollafirði",
   description: SITE.description,
   openGraph: {
-    title:       `${SITE.name} — Become a Jarl, Lord or Lady of Snæfellsnes`,
+    title:       `${SITE.name} — Become a Jarl, Baron or Baroness of Eyri in Kollafjordur`,
     description: SITE.description,
     url:         SITE.url,
     images: [
