@@ -1,11 +1,10 @@
 "use client";
 // ─────────────────────────────────────────────────────────────────────────────
 // TheLandHero — /the-land page header (Vestfirðir version)
-// Atmospheric fjord header with breadcrumb
 // ─────────────────────────────────────────────────────────────────────────────
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Home, ChevronRight, Mountain } from "lucide-react";
+import { Home, ChevronRight } from "lucide-react";
 
 export function TheLandHero() {
   return (
@@ -15,22 +14,10 @@ export function TheLandHero() {
     >
       {/* Aurora orbs */}
       <div aria-hidden="true">
-        <div
-          className="aurora-orb w-[700px] h-[500px] bg-glacier/7 -top-20 -right-20"
-          style={{ animationDelay: "0s" }}
-        />
-        <div
-          className="aurora-orb w-[400px] h-[400px] bg-aurora-violet/6 bottom-0 left-0"
-          style={{ animationDelay: "-11s" }}
-        />
+        <div className="aurora-orb w-[700px] h-[500px] bg-glacier/7 -top-20 -right-20" style={{ animationDelay: "0s" }} />
+        <div className="aurora-orb w-[400px] h-[400px] bg-aurora-violet/6 bottom-0 left-0" style={{ animationDelay: "-11s" }} />
       </div>
       <div className="grain-overlay" aria-hidden="true" />
-
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-ice-black to-transparent pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
         {/* Breadcrumb */}
@@ -64,29 +51,6 @@ export function TheLandHero() {
             At Eyri í Kollafirði in the Gufudalssveit valley of Vestfirðir, the land feels alive. 
             The Huldufólk are said to walk these shores, and on clear days Snæfellsjökull rises across the fjord like a silent guardian.
           </p>
-        </motion.div>
-
-        {/* Spirit indicators row */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex flex-wrap gap-3 mt-10"
-        >
-          {[
-            { icon: "🌊", label: "Eyri í Kollafirði" },
-            { icon: "🧝", label: "Huldufólk of Gufudalssveit" },
-            { icon: "🏔", label: "View to Snæfellsjökull" },
-            { icon: "♾", label: "Ancient power of Vestfirðir" },
-          ].map(({ icon, label }) => (
-            <div
-              key={label}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/[0.05] border border-white/[0.08] font-body text-xs text-white/55"
-            >
-              <span aria-hidden="true">{icon}</span>
-              {label}
-            </div>
-          ))}
         </motion.div>
       </div>
     </section>
