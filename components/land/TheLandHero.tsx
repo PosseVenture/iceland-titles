@@ -1,9 +1,9 @@
 "use client";
 // ─────────────────────────────────────────────────────────────────────────────
-// TheLandHero — /the-land page header
-// Atmospheric aurora header with breadcrumb
+// TheLandHero — /the-land page header (Vestfirðir version)
+// Atmospheric fjord header with breadcrumb
 // ─────────────────────────────────────────────────────────────────────────────
-import Link       from "next/link";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Home, ChevronRight, Mountain } from "lucide-react";
 
@@ -33,7 +33,6 @@ export function TheLandHero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
-
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-1.5 font-body text-xs text-white/35">
@@ -54,24 +53,16 @@ export function TheLandHero() {
           transition={{ duration: 0.65 }}
           className="max-w-3xl"
         >
-          <p className="eyebrow mb-4">Snæfellsnes Reserve · Iceland</p>
-
+          <p className="eyebrow mb-4">Eyri í Kollafirði · Vestfirðir</p>
           <h1 className="font-display text-[clamp(2.8rem,7vw,5.5rem)] font-light text-white leading-[0.95] mb-6">
             Where the{" "}
-            <em className="not-italic text-gradient-glacier">glacier</em>
-            <br />holds the{" "}
-            <em className="not-italic text-gradient-rune">souls of Iceland</em>
+            <em className="not-italic text-gradient-glacier">ancient land</em>
+            <br />meets the{" "}
+            <em className="not-italic text-gradient-rune">hidden world</em>
           </h1>
-
           <p className="font-body text-base md:text-lg text-white/50 leading-relaxed max-w-2xl">
-            At the tip of the Snæfellsnes peninsula stands Snæfellsjökull — a
-            1,446-metre ice-crowned volcano that Jules Verne chose as the gateway to
-            the centre of the Earth. It is also, according to Icelandic tradition, the
-            home of guardian spirit{" "}
-            <strong className="text-white/80 font-semibold">Bárður Snæfellsás</strong>{" "}
-            and one of Earth's seven great energy centres — a place of ancient power,
-            transformation, and the ever-present{" "}
-            <strong className="text-white/80 font-semibold">huldufólk</strong>.
+            At Eyri í Kollafirði in the Gufudalssveit valley of Vestfirðir, the land feels alive. 
+            The Huldufólk are said to walk these shores, and on clear days Snæfellsjökull rises across the fjord like a silent guardian.
           </p>
         </motion.div>
 
@@ -83,10 +74,10 @@ export function TheLandHero() {
           className="flex flex-wrap gap-3 mt-10"
         >
           {[
-            { icon: "🗻", label: "Snæfellsjökull National Park" },
-            { icon: "👁",  label: "Guardian spirit Bárður"      },
-            { icon: "🧝", label: "Huldufólk lava fields"        },
-            { icon: "♾",  label: "Earth energy centre"          },
+            { icon: "🌊", label: "Eyri í Kollafirði" },
+            { icon: "🧝", label: "Huldufólk of Gufudalssveit" },
+            { icon: "🏔", label: "View to Snæfellsjökull" },
+            { icon: "♾", label: "Ancient power of Vestfirðir" },
           ].map(({ icon, label }) => (
             <div
               key={label}

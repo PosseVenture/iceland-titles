@@ -15,7 +15,7 @@ import { SITE }          from "@/lib/data";
 export function HeroSkeleton() {
   return (
     <section
-      aria-label="Hero — Become a Jarl, Lord or Lady of Snæfellsnes"
+      aria-label="Hero — Become a Jarl, Baron or Baroness of Eyri í Kollafirði"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ice-black"
     >
       {/* ── Background image placeholder ──────────────────────────────────
@@ -60,7 +60,7 @@ export function HeroSkeleton() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <p className="eyebrow justify-center mb-6">
-            Snæfellsnes Reserve · Iceland
+            Vestfirðir Reserve · Iceland
           </p>
         </motion.div>
 
@@ -97,7 +97,7 @@ export function HeroSkeleton() {
             "text-white/55 max-w-2xl mx-auto mb-10 text-balance"
           )}
         >
-          Claim your souvenir plot in the mystical Snæfellsnes Reserve —
+          Claim your souvenir plot in the mystical Vestfirðir Reserve —
           where guardian spirit <strong className="text-white/80 font-semibold">Bárður Snæfellsás</strong> watches
           from within the glacier and the{" "}
           <strong className="text-white/80 font-semibold">huldufólk</strong> dwell among ancient lava fields.
