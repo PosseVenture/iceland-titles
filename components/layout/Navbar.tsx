@@ -66,7 +66,7 @@ function Logo({ onClick }: { onClick?: () => void }) {
           Icelandic Titles
         </span>
         <span className="font-body text-[10px] tracking-[0.18em] text-glacier-dim uppercase mt-0.5">
-          Snæfellsnes Reserve
+          Vestfirðir Reserve
         </span>
       </div>
     </Link>
