@@ -59,14 +59,13 @@ function Logo({ onClick }: { onClick?: () => void }) {
         {/* Spirit glow on hover */}
         <div className="absolute inset-0 rounded-xl bg-spirit/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
       </div>
-
       {/* Wordmark */}
       <div className="flex flex-col leading-none">
         <span className="font-display text-[15px] font-semibold text-white tracking-wide">
           Icelandic Titles
         </span>
         <span className="font-body text-[10px] tracking-[0.18em] text-glacier-dim uppercase mt-0.5">
-          Vestfirðir Reserve
+          Eyri í Kollafirði · Vestfirðir
         </span>
       </div>
     </Link>
