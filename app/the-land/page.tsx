@@ -1,6 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // /the-land — Reserve overview page (Vestfirðir version)
-// Single large card for Eyri í Kollafirði Reserve
 // ─────────────────────────────────────────────────────────────────────────────
 import type { Metadata } from "next";
 import { SITE, RESERVE } from "@/lib/data";
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Land — Eyri í Kollafirði Reserve | Icelandic Titles",
     description:
-      "Discover the primordial landscape of Vestfirðir and claim your souvenir plot at Eyri í Kollafirði, where hidden people and ancient power converge.",
+      "Discover the primordial landscape of Vestfirðir and claim your souvenir plot at Eyri í Kollafirði.",
     url: `${SITE.url}/the-land`,
   },
 };
