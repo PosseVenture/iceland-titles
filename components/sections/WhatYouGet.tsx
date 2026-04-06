@@ -17,7 +17,7 @@ const CARDS = [
     glow:  "hover:border-glacier/30 hover:shadow-glacier",
     title: "Personalised Certificate",
     body:  "A beautifully designed PDF (and optional A3 print) declaring you Jarl, Lord or Lady of Snæfellsnes — personalised with your name and your souvenir plot reference.",
-    detail: "Signed & sealed with the Snæfellsnes Reserve crest",
+    detail: "Signed & sealed with the Vestfirðir Reserve crest",
   },
   {
     icon:  "📍",
@@ -25,7 +25,7 @@ const CARDS = [
     glow:  "hover:border-aurora/30 hover:shadow-aurora",
     title: "Your Plot Location",
     body:  "Exact GPS coordinates and a What3Words address pin-pointing your souvenir plot within sight of Snæfellsjökull glacier. Use it to visit in person or on Google Maps.",
-    detail: "Snæfellsnes Reserve · 64.8°N, 23.7°W",
+    detail: "Vestfirðir Reserve · 64.8°N, 23.7°W",
   },
   {
     icon:  "🌿",
