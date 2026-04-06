@@ -1,22 +1,21 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// /the-land — Reserve overview page
-// Single large card for Snæfellsnes Reserve → links to /the-land/snaefellsnes
+// /the-land — Reserve overview page (Vestfirðir version)
+// Single large card for Eyri í Kollafirði Reserve
 // ─────────────────────────────────────────────────────────────────────────────
-import type { Metadata }        from "next";
-import { SITE, RESERVE }        from "@/lib/data";
-import { TheLandHero }          from "@/components/land/TheLandHero";
-import { ReserveOverviewCard }  from "@/components/land/ReserveOverviewCard";
-import { MysticalFactsStrip }   from "@/components/land/MysticalFactsStrip";
+import type { Metadata } from "next";
+import { SITE, RESERVE } from "@/lib/data";
+import { TheLandHero } from "@/components/land/TheLandHero";
+import { ReserveOverviewCard } from "@/components/land/ReserveOverviewCard";
+import { MysticalFactsStrip } from "@/components/land/MysticalFactsStrip";
 
 export const metadata: Metadata = {
-  title:       "The Land — Snæfellsnes Reserve | Icelandic Titles",
+  title: "The Land — Eyri í Kollafirði Reserve | Icelandic Titles",
   description:
-    "Explore the mystical Snæfellsnes Reserve within Snæfellsjökull National Park — home of guardian spirit Bárður Snæfellsás and the huldufólk hidden people. Your souvenir plot lies here.",
+    "Explore the wild and ancient Eyri í Kollafirði Reserve in Gufudalssveit, Vestfirðir — where the Huldufólk roam the mist and Snæfellsjökull watches from across the fjord.",
   openGraph: {
-    title:
-      "The Land — Snæfellsnes Reserve | Icelandic Titles",
+    title: "The Land — Eyri í Kollafirði Reserve | Icelandic Titles",
     description:
-      "Discover the legendary Snæfellsjökull glacier — one of Earth's seven great energy centres — and claim your souvenir plot in its shadow.",
+      "Discover the primordial landscape of Vestfirðir and claim your souvenir plot at Eyri í Kollafirði, where hidden people and ancient power converge.",
     url: `${SITE.url}/the-land`,
   },
 };
@@ -25,7 +24,7 @@ export default function TheLandPage() {
   return (
     <>
       <TheLandHero />
-      <main id="reserve-overview" aria-label="Snæfellsnes Reserve overview">
+      <main id="reserve-overview" aria-label="Eyri í Kollafirði Reserve overview">
         <ReserveOverviewCard reserve={RESERVE} />
         <MysticalFactsStrip facts={RESERVE.mysticalFacts} />
       </main>
