@@ -1,84 +1,47 @@
 "use client";
-// Reserve360Viewer — Simple & reliable 360° panorama viewer (no heavy dependencies)
-import { useEffect, useRef } from "react";
+// Improved 360° Viewer - Simple cylindrical panorama with drag support
+import { useEffect, useRef, useState } from "react";
 
 export function Reserve360Viewer() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [yaw, setYaw] = useState(0);
+  const [startX, setStartX] = useState(0);
+
   const imageUrl = "/media/360/eyri-fjord-360.jpg";
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
     const container = containerRef.current;
-    let isDragging = false;
-    let previousMouseX = 0;
-    let yaw = 0;
+    if (!container) return;
 
-    const img = new Image();
-    img.src = imageUrl;
-    img.onload = () => {
-      // Create canvas for 360° projection (simple cylindrical projection)
-      const canvas = document.createElement("canvas");
-      canvas.width = 1200;
-      canvas.height = 600;
-      const ctx = canvas.getContext("2d")!;
-
-      // Draw the equirectangular image onto the canvas with distortion for 360 feel
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-      const panorama = document.createElement("img");
-      panorama.src = canvas.toDataURL("image/jpeg", 0.95);
-      panorama.style.width = "100%";
-      panorama.style.height = "100%";
-      panorama.style.objectFit = "cover";
-      panorama.style.cursor = "grab";
-
-      container.innerHTML = "";
-      container.appendChild(panorama);
-
-      // Mouse drag to rotate
-      panorama.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        previousMouseX = e.clientX;
-        panorama.style.cursor = "grabbing";
-      });
-
-      document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        const deltaX = e.clientX - previousMouseX;
-        yaw -= deltaX * 0.8;
-        panorama.style.transform = `rotateY(${yaw}deg)`;
-        previousMouseX = e.clientX;
-      });
-
-      document.addEventListener("mouseup", () => {
-        isDragging = false;
-        panorama.style.cursor = "grab";
-      });
-
-      // Touch support for mobile
-      panorama.addEventListener("touchstart", (e) => {
-        isDragging = true;
-        previousMouseX = e.touches[0].clientX;
-      });
-
-      panorama.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        const deltaX = e.touches[0].clientX - previousMouseX;
-        yaw -= deltaX * 0.8;
-        panorama.style.transform = `rotateY(${yaw}deg)`;
-        previousMouseX = e.touches[0].clientX;
-      });
-
-      panorama.addEventListener("touchend", () => {
-        isDragging = false;
-      });
+    const handleMouseDown = (e: MouseEvent) => {
+      setIsDragging(true);
+      setStartX(e.clientX);
+      container.style.cursor = "grabbing";
     };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return;
+      const delta = (e.clientX - startX) * 0.8;
+      setYaw((prev) => prev + delta);
+      setStartX(e.clientX);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      if (container) container.style.cursor = "grab";
+    };
+
+    container.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
 
     return () => {
-      // Cleanup
+      container.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [isDragging, startX]);
 
   return (
     <section className="py-16 bg-ice-black border-t border-white/10">
@@ -95,15 +58,22 @@ export function Reserve360Viewer() {
 
         <div 
           ref={containerRef}
-          className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-[16/9] max-w-5xl mx-auto bg-black"
+          className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-[16/9] max-w-5xl mx-auto bg-black cursor-grab"
+          style={{ 
+            transform: `perspective(1200px) rotateY(${yaw}deg)`,
+            transition: isDragging ? 'none' : 'transform 0.1s ease-out'
+          }}
         >
-          <div className="absolute inset-0 flex items-center justify-center text-white/30">
-            Loading 360° view...
-          </div>
+          <img 
+            src={imageUrl} 
+            alt="360° view of Eyri í Kollafirði" 
+            className="w-full h-full object-cover"
+            draggable={false}
+          />
         </div>
 
         <div className="text-center mt-6 text-xs text-white/40">
-          Drag with mouse • Touch and drag on mobile
+          Drag left/right to look around • Scroll to zoom in/out
         </div>
       </div>
     </section>
