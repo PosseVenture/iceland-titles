@@ -28,7 +28,7 @@ export default function TheLandPage() {
         <ReserveOverviewCard reserve={RESERVE} />
         <MysticalFactsStrip facts={RESERVE.mysticalFacts} />
         
-        {/* 360° Virtual Tour */}
+        {/* 360° Virtual Tour of the Plot */}
         <Reserve360Viewer 
           imageUrl="/media/360/eyri-fjord-360.jpg" 
           title="Virtual Tour – Eyri í Kollafirði" 
