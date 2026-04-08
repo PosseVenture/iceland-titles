@@ -6,6 +6,7 @@ import { SITE, RESERVE } from "@/lib/data";
 import { TheLandHero } from "@/components/land/TheLandHero";
 import { ReserveOverviewCard } from "@/components/land/ReserveOverviewCard";
 import { MysticalFactsStrip } from "@/components/land/MysticalFactsStrip";
+import { Reserve360Viewer } from "@/components/land/Reserve360Viewer";
 
 export const metadata: Metadata = {
   title: "The Land — Eyri í Kollafirði Reserve | Icelandic Titles",
@@ -26,6 +27,12 @@ export default function TheLandPage() {
       <main id="reserve-overview" aria-label="Eyri í Kollafirði Reserve overview">
         <ReserveOverviewCard reserve={RESERVE} />
         <MysticalFactsStrip facts={RESERVE.mysticalFacts} />
+        
+        {/* 360° Virtual Tour */}
+        <Reserve360Viewer 
+          imageUrl="/media/360/eyri-fjord-360.jpg" 
+          title="Virtual Tour – Eyri í Kollafirði" 
+        />
       </main>
     </>
   );
