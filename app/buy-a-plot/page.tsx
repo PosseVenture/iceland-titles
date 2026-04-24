@@ -1,16 +1,15 @@
 // app/buy-a-plot/page.tsx
 import type { Metadata } from "next";
 import { SITE, PRODUCTS } from "@/lib/data";
-import { CurrencyBar } from "@/components/shop/CurrencyBar";
+import { ShopHero } from "@/components/shop/ShopHero";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { GuaranteeBanner } from "@/components/shop/GuaranteeBanner";
 import { ComparisonTable } from "@/components/shop/ComparisonTable";
-import { ShopHero } from "@/components/shop/ShopHero";
 import { ShopFaq } from "@/components/shop/ShopFaq";
 
 export const metadata: Metadata = {
   title: "Buy a Souvenir Plot — Eyri í Kollafirði",
-  description: "Claim your plot at Eyri í Kollafirði in the wild Westfjords. Become a Jarl, Baron or Baroness with personalised certificate and GPS coordinates.",
+  description: "Own a piece of Eyri í Kollafirði in the wild Westfjords. Jarl, Baron & Baroness titles with certificate and GPS.",
 };
 
 export default function BuyAPlotPage() {
@@ -18,10 +17,10 @@ export default function BuyAPlotPage() {
     <>
       <ShopHero />
 
-      <main className="bg-ice-black">
+      <main className="bg-ice-black pt-8">
         {/* Trust bar */}
-        <div className="border-b border-white/10 py-4">
-          <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/70">
+        <div className="border-b border-white/10 py-5">
+          <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-white/70">
             <span>🌲 Conservation funded</span>
             <span>📍 GPS + What3Words</span>
             <span>🛡️ 90-day guarantee</span>
@@ -31,7 +30,7 @@ export default function BuyAPlotPage() {
 
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mb-16">
-            <h2 className="font-display text-5xl tracking-tight">Choose your pack</h2>
+            <h2 className="font-display text-5xl md:text-6xl tracking-tighter">Choose your pack</h2>
             <p className="mt-4 text-white/70 text-lg">Three ways to own a piece of the wild Westfjords</p>
           </div>
 
