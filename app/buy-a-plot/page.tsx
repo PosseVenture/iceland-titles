@@ -1,6 +1,4 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// /buy-a-plot — Shop Page (Eyri í Kollafirði version)
-// ─────────────────────────────────────────────────────────────────────────────
+// app/buy-a-plot/page.tsx
 import type { Metadata } from "next";
 import { SITE, PRODUCTS } from "@/lib/data";
 import { CurrencyBar } from "@/components/shop/CurrencyBar";
@@ -12,8 +10,7 @@ import { ShopFaq } from "@/components/shop/ShopFaq";
 
 export const metadata: Metadata = {
   title: "Buy a Souvenir Plot — Eyri í Kollafirði",
-  description:
-    "Claim your plot in Eyri í Kollafirði, Vestfirðir. Choose between 1 sq ft Jarl, 5 sq ft Baron/Baroness, or 10 sq ft High Jarl. Free worldwide shipping.",
+  description: "Claim your plot at Eyri í Kollafirði in the wild Westfjords. Become a Jarl, Baron or Baroness with personalised certificate and GPS coordinates.",
 };
 
 export default function BuyAPlotPage() {
@@ -21,41 +18,33 @@ export default function BuyAPlotPage() {
     <>
       <ShopHero />
 
-      <main className="pt-8 pb-24 bg-ice-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Header */}
+      <main className="bg-ice-black">
+        {/* Trust bar */}
+        <div className="border-b border-white/10 py-4">
+          <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/70">
+            <span>🌲 Conservation funded</span>
+            <span>📍 GPS + What3Words</span>
+            <span>🛡️ 90-day guarantee</span>
+            <span>🚚 Free worldwide shipping</span>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mb-16">
-            <p className="eyebrow mb-3">EYRI Í KOLLAFIRÐI • VESTFIRÐIR</p>
-            <h1 className="font-display text-5xl md:text-6xl font-light text-white tracking-tight">
-              Own a piece of the wild Westfjords
-            </h1>
-            <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
-              Claim your souvenir plot at Eyri í Kollafirði. 
-              Style yourself as Jarl, Baron or Baroness and help restore this ancient landscape where Huldufólk still roam.
-            </p>
+            <h2 className="font-display text-5xl tracking-tight">Choose your pack</h2>
+            <p className="mt-4 text-white/70 text-lg">Three ways to own a piece of the wild Westfjords</p>
           </div>
 
-          {/* Products */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {PRODUCTS.map((product, index) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                index={index}
-              />
+              <ProductCard key={product.id} product={product} index={index} />
             ))}
           </div>
-
-          {/* Trust bar */}
-          <GuaranteeBanner />
-
-          {/* Comparison Table */}
-          <ComparisonTable />
-
-          {/* FAQ */}
-          <ShopFaq />
         </div>
+
+        <GuaranteeBanner />
+        <ComparisonTable />
+        <ShopFaq />
       </main>
     </>
   );
