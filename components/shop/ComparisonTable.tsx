@@ -11,7 +11,7 @@ const ROWS = [
   { feature: "A3 luxury framing certificate",            eco: false, lux5: false, lux10: true  },
   { feature: "GPS plot coordinates",                     eco: true,  lux5: true,  lux10: true  },
   { feature: "What3Words address",                       eco: true,  lux5: true,  lux10: true  },
-  { feature: "Right to use Jarl/Lord/Lady title",        eco: true,  lux5: true,  lux10: true  },
+  { feature: "Right to use Jarl/Baron/Baroness title",   eco: true,  lux5: true,  lux10: true  },
   { feature: "Owner's app access & virtual tour",        eco: true,  lux5: true,  lux10: true  },
   { feature: "Iceland gift box & tissue paper",          eco: false, lux5: true,  lux10: true  },
   { feature: "Volcanic basalt coaster",                  eco: false, lux5: true,  lux10: "×2"  },
