@@ -30,7 +30,7 @@ export default function BuyAPlotPage() {
 
         {/* Products Section */}
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="mb-16">
+          <div className="text-center mb-16">
             <h2 className="font-display text-5xl md:text-6xl tracking-tight text-white">Choose your pack</h2>
             <p className="mt-4 text-white/70 text-lg">Three ways to own a piece of the wild Westfjords</p>
           </div>
