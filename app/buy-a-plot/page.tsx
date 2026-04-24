@@ -9,7 +9,7 @@ import { ShopFaq } from "@/components/shop/ShopFaq";
 
 export const metadata: Metadata = {
   title: "Buy a Souvenir Plot — Eyri í Kollafirði",
-  description: "Own a piece of Eyri í Kollafirði in the wild Westfjords. Jarl, Baron & Baroness titles.",
+  description: "Become a Jarl, Baron or Baroness of Eyri í Kollafirði in the wild Westfjords.",
 };
 
 export default function BuyAPlotPage() {
@@ -18,9 +18,9 @@ export default function BuyAPlotPage() {
       <ShopHero />
 
       <main className="bg-ice-black">
-        {/* Trust bar */}
+        {/* Trust Bar - same style as other pages */}
         <div className="border-b border-white/10 py-6">
-          <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/70">
+          <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm text-white/70">
             <span>🌲 Conservation funded</span>
             <span>📍 GPS + What3Words</span>
             <span>🛡️ 90-day guarantee</span>
@@ -28,11 +28,15 @@ export default function BuyAPlotPage() {
           </div>
         </div>
 
-        {/* Products */}
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-5xl tracking-tight">Choose your pack</h2>
-            <p className="mt-3 text-white/70">Three ways to own a piece of the wild Westfjords</p>
+        {/* Products Section - clean spacing like The Land */}
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-5xl md:text-6xl tracking-tight text-white">
+              Choose your pack
+            </h2>
+            <p className="mt-4 text-white/70 text-lg">
+              Three ways to own a piece of the wild Westfjords
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
