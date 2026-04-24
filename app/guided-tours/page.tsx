@@ -34,7 +34,7 @@ function ToursHero() {
         TODO: Replace with next/image
         Query: "northern lights Iceland glacier landscape night"
         alt: "Vivid aurora borealis dancing above Snæfellsjökull glacier at night —
-              the spirits of Snæfellsnes said to travel within the dancing lights"
+              the spirits of Vestfirðir said to travel within the dancing lights"
         Use: fill, priority, object-cover, opacity overlay
       */}
 
@@ -59,7 +59,7 @@ function ToursHero() {
           transition={{ duration: 0.65 }}
           className="max-w-3xl"
         >
-          <p className="eyebrow mb-4">Snæfellsnes Reserve · Iceland</p>
+          <p className="eyebrow mb-4">Vestfirðir Reserve · Iceland</p>
 
           <h1 className="font-display text-[clamp(2.8rem,7vw,5.5rem)] font-light text-white leading-[0.93] mb-6">
             Walk the{" "}
@@ -73,7 +73,7 @@ function ToursHero() {
             <strong className="text-white/80 font-semibold">Bárður Snæfellsás</strong>
             {" "}and the{" "}
             <strong className="text-white/80 font-semibold">huldufólk</strong>
-            {" "}to life among the ancient lava fields of Snæfellsnes.
+            {" "}to life among the ancient mountains of Vestfirðir.
           </p>
 
           {/* Trust strip */}
@@ -119,7 +119,7 @@ function TourFaqStrip() {
       a: "The Elf Rock Expedition is family-friendly for ages 5+. The Glacier Soul Walk suits ages 10+ with moderate fitness. The Northern Lights Vigil is suitable for all ages.",
     },
     {
-      q: "How do I get to Snæfellsnes from Reykjavík?",
+      q: "How do I get to Eyri Kollafirði from Reykjavík?",
       a: "By car it's ~190 km (2.5 hours) via Route 1 and 54. We offer a pickup service from Reykjavík on most tour dates — mention it in your booking notes.",
     },
   ];
@@ -177,7 +177,7 @@ function ToursCTA() {
             Don't have a plot yet?
           </h2>
           <p className="font-body text-base text-white/45 mb-8 leading-relaxed max-w-lg mx-auto">
-            Claim your souvenir plot in the Snæfellsnes Reserve and join 18,240 Jarls, Lords
+            Claim your souvenir plot in the Vestfirðir Reserve and join 18,240 Jarls, Lords
             and Ladies. Plot owners receive 10% off every guided tour — forever.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -223,10 +223,10 @@ export default function GuidedToursPage() {
               <p className="eyebrow justify-center mb-3">Three experiences</p>
               <h2 className="font-display text-[clamp(2rem,4.5vw,3rem)] font-light text-white">
                 Choose your{" "}
-                <em className="not-italic text-gradient-glacier">Snæfellsnes adventure</em>
+                <em className="not-italic text-gradient-glacier">Vestfirðir adventure</em>
               </h2>
               <p className="font-body text-sm text-white/40 mt-3 max-w-xl mx-auto leading-relaxed">
-                All tours depart from Arnarstapi village on the Snæfellsnes peninsula.
+                All tours depart from Borgarnes village.
                 Pickup from Reykjavík available — mention in booking notes.
               </p>
             </div>
