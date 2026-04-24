@@ -15,7 +15,7 @@ const ROWS = [
   { feature: "Owner's app access & virtual tour",        eco: true,  lux5: true,  lux10: true  },
   { feature: "Iceland gift box & tissue paper",          eco: false, lux5: true,  lux10: true  },
   { feature: "Volcanic basalt coaster",                  eco: false, lux5: true,  lux10: "×2"  },
-  { feature: "Snæfellsnes printed map",                  eco: false, lux5: true,  lux10: "A3"  },
+  { feature: "Vestfirðir printed map",                   eco: false, lux5: true,  lux10: "A3"  },
   { feature: "Plant a Tree bookmark",                    eco: false, lux5: true,  lux10: true  },
   { feature: "Plant a Tree included",                    eco: false, lux5: false, lux10: true  },
   { feature: "'Secrets of the Glacier' booklet",         eco: false, lux5: false, lux10: true  },
