@@ -3,7 +3,7 @@ export function ShopHero() {
   return (
     <div className="bg-[#0a0f1a] pt-32 pb-24">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Breadcrumb like The Land */}
+        {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-white/60 mb-6">
           <span>Home</span>
           <span>›</span>
